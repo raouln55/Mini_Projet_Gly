@@ -1,0 +1,41 @@
+<h2>Liste des aliments</h2>
+<h3>Formulaire d'ajout des aliments</h3>
+
+<form [formGroup]="addAlimentForm" (ngSubmit)="onSubmit(addAlimentForm.value)">
+    
+    <div>
+        <label for="name">Nom de l'aliment</label>
+        <input id="name" type="text" formControlName="name" placeholder="Nom de l'aliment">
+    </div>
+    <div>
+        <label for="ig">Indice glycémique</label>
+        <input id="ig" type="number" formControlName="ig" placeholder="Indice glycémique" value="0" min="0" max="200">
+    </div>
+    <div>
+        <label for="carbs">Proportion de glucides (g/100g)</label>
+        <input id="carbs" type="number" formControlName="carbs" placeholder="Proportion de glucides (g/100g)" value="0" min="0" max="100">
+    </div>
+
+    <button class="button" type="submit">Ajouter l'aliment</button>
+
+</form>
+
+<h3>Liste de choix des aliments</h3>
+<table>
+    <tr>
+        <th>Nom de l'aliment</th>
+        <th>Indice glycémique</th>
+        <th>Proportion de glucides (g/100g)</th>
+        <th>Supprimer</th>
+    </tr>
+    <tr *ngFor="let aliment of alimentList | async; index as alimentId">
+        <td>{{aliment.name}}</td>
+        <td>{{aliment.ig}}</td>
+        <td>{{aliment.carbs}}</td>
+        <td> 
+            <button (click)="deleteAliment(alimentId)">Supprimer</button>
+        </td>
+    </tr>
+</table>
+<router-outlet></router-outlet>
+

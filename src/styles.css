@@ -1,0 +1,54 @@
+app-top-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+app-top-bar h1 {
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+app-top-bar h1 a {
+    text-decoration: none;
+}
+
+
+app-top-bar nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-inline-start: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+app-top-bar nav ul li {
+    list-style-type: none;
+    margin: 20px;
+}
+
+app-aliment-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+app-aliment-list table {
+    border: thin solid #000000;
+    width: fit-content;
+    border-collapse: collapse;
+    margin: auto;
+    }
+
+app-aliment-list td, th {
+    border: thin solid #6495ed;
+}
+
+app-calculator {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
